@@ -1,4 +1,5 @@
 import pygame
+from personaje import Cubo
 
 #pip install pygame
 
@@ -8,6 +9,8 @@ VENTANA = pygame.display.set_mode([ANCHO,ALTO])
 
 jugando = True
 
+cubo = Cubo(100,100)
+
 while jugando:
     eventos = pygame.event.get()
 
@@ -15,6 +18,7 @@ while jugando:
         if evento.type == pygame.QUIT:
             jugando = False
 
+    cubo.dibujar(VENTANA)
     pygame.display.update()
 
 quit()
